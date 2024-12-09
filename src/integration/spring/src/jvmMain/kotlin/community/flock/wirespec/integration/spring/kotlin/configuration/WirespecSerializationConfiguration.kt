@@ -14,7 +14,7 @@ import kotlin.reflect.javaType
 @Configuration
 @OptIn(ExperimentalStdlibApi::class)
 @Import(WirespecResponseBodyAdvice::class, WirespecWebMvcConfiguration::class)
-open class WirespecConfiguration {
+open class WirespecSerializationConfiguration {
 
     @Bean
     open fun wirespecSerialization(objectMapper: ObjectMapper) = object : Wirespec.Serialization<String> {
@@ -31,10 +31,10 @@ open class WirespecConfiguration {
             }
 
         override fun <T> deserialize(raw: String, kType: KType): T =
-            if (isStringIterable(kType)) {
-                raw.split(stringListDelimiter) as T
-            } else {
-                wirespecObjectMapper
+            when {
+                kType.classifier == String::class -> raw as T
+                isStringIterable(kType) -> raw.split(stringListDelimiter) as T
+                else -> wirespecObjectMapper
                     .constructType(kType.javaType)
                     .let { wirespecObjectMapper.readValue(raw, it) }
             }
