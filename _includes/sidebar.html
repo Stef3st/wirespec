@@ -1,0 +1,23 @@
+<div class="sidebar">
+    <div class="container">
+      <div class="sidebar-about">
+        <img src="{{ site.baseurl }}/public/wirespec.png" style="width: 10vw;"/>
+        <h2>
+          <a href="{{ site.baseurl }}">
+            {{ site.title }}
+          </a>
+        </h2>
+        <p class="lead">{{ site.description }}</p>
+      </div>
+  
+      <nav class="sidebar-nav">
+        <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+        <a class="sidebar-nav-item{% if page.url == '/external.html' %} active{% endif %}" href="{{ site.baseurl }}/external.html">Playground</a>
+        <a class="sidebar-nav-item{% if page.url == '/GLOSSARY.html' %} active{% endif %}" href="{{ site.baseurl }}/GLOSSARY.html">Glossary</a>
+        <a class="sidebar-nav-item{% if page.url == '/archive/ARCHIVE.html' %} active{% endif %}" href="{{ site.baseurl }}/archive/ARCHIVE.html">Archive</a>
+      </nav>
+  
+      <p>Currently v{{ site.version }}</p>
+      <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    </div>
+  </div>
