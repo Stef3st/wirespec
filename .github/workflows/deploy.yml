@@ -31,7 +31,6 @@ jobs:
       - name: Install Jekyll and Bundler
         run: |
           gem install jekyll bundler
-          bundle config build.sass-embedded --use-system-libraries
           bundle install
 
       - name: Build Jekyll site
