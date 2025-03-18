@@ -26,7 +26,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential libsass1
+          sudo apt-get install -y build-essential libsass1 libffi-dev ruby-dev
 
       - name: Install Jekyll and Bundler
         run: |
