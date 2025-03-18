@@ -1,4 +1,3 @@
-# Simple index
 ---
 layout: default
 ---
