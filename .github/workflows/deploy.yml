@@ -32,4 +32,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           publish_branch: main
-          destination_repo: Stef3st/Stef3st.github.io
+          external_repository: Stef3st/Stef3st.github.io
