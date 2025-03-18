@@ -23,6 +23,11 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essentials libsass1
+
       - name: Install Jekyll and Bundler
         run: |
           gem install jekyll bundler
