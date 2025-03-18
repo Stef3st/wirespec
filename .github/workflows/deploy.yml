@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           publish_dir: ./_site
           publish_branch: main
           external_repository: Stef3st/Stef3st.github.io
